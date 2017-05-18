@@ -14,8 +14,15 @@ import android.widget.FrameLayout;
 import com.example.taoguo.cloudreadertest.app.ConstantsImageUrl;
 import com.example.taoguo.cloudreadertest.databinding.ActivityMainBinding;
 import com.example.taoguo.cloudreadertest.databinding.NavHeaderMainBinding;
+import com.example.taoguo.cloudreadertest.ui.NavHomePageActivity;
+import com.example.taoguo.cloudreadertest.ui.menu.NavAboutActivity;
+import com.example.taoguo.cloudreadertest.ui.menu.NavDeedBackActivity;
+import com.example.taoguo.cloudreadertest.ui.menu.NavDownloadActivity;
 import com.example.taoguo.cloudreadertest.utils.ImgLoadUtil;
 import com.example.taoguo.cloudreadertest.utils.PerfectClickListener;
+import com.example.taoguo.cloudreadertest.view.webview.WebViewActivity;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -76,6 +83,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         bind.llNavDeedback.setOnClickListener(listener);
         bind.llNavAbout.setOnClickListener(listener);
         bind.llNavLogin.setOnClickListener(listener);
+
+        String a = "213sdasd";
+        a.replace();
+        char[] tes = a.toCharArray();
+        ArrayList test = new ArrayList(tes);
     }
 
     @Override
@@ -85,7 +97,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 drawerLayout.openDrawer(GravityCompat.START);
                 break;
             case R.id.iv_avatar: // 头像进入GitHub
-                //WebViewActivity.loadUrl(v.getContext(),CommonUtils.getString(R.string.string_url_cloudreader),"CloudReader");
+                WebViewActivity.loadUrl(view.getContext(),"https://github.com/youlookwhat/CloudReader","CloudReader");
                 break;
             case R.id.ll_nav_exit:// 退出应用
                 finish();
@@ -102,15 +114,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 public void run() {
                     switch (v.getId()) {
                         case R.id.ll_nav_homepage://主页
+                            NavHomePageActivity.startHome(MainActivity.this);
                             break;
                         case R.id.ll_nav_scan_download://扫码下载
-                            //NavDownloadActivity.start(MainActivity.this);
+                            NavDownloadActivity.start(MainActivity.this);
                             break;
                         case R.id.ll_nav_deedback:// 问题反馈
-                            //NavDeedBackActivity.start(MainActivity.this);
+                            NavDeedBackActivity.start(MainActivity.this);
                             break;
                         case R.id.ll_nav_about:// 关于云阅
-                            //NavAboutActivity.start(MainActivity.this);
+                            NavAboutActivity.start(MainActivity.this);
                             break;
                         case R.id.ll_nav_login:// 登录GitHub账号
                             //WebViewActivity.loadUrl(v.getContext(), "https://github.com/login", "登录GitHub账号");
