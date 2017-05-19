@@ -22,8 +22,6 @@ import com.example.taoguo.cloudreadertest.utils.ImgLoadUtil;
 import com.example.taoguo.cloudreadertest.utils.PerfectClickListener;
 import com.example.taoguo.cloudreadertest.view.webview.WebViewActivity;
 
-import java.util.ArrayList;
-
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
 
@@ -83,11 +81,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         bind.llNavDeedback.setOnClickListener(listener);
         bind.llNavAbout.setOnClickListener(listener);
         bind.llNavLogin.setOnClickListener(listener);
-
-        String a = "213sdasd";
-        a.replace();
-        char[] tes = a.toCharArray();
-        ArrayList test = new ArrayList(tes);
     }
 
     @Override
@@ -126,7 +119,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             NavAboutActivity.start(MainActivity.this);
                             break;
                         case R.id.ll_nav_login:// 登录GitHub账号
-                            //WebViewActivity.loadUrl(v.getContext(), "https://github.com/login", "登录GitHub账号");
+                            WebViewActivity.loadUrl(v.getContext(), "https://github.com/login", "登录GitHub账号");
                             break;
                     }
                 }
